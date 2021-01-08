@@ -5,9 +5,17 @@
   <meta charset="UTF-8">
   <title>توثيق AlpineJs بالعربية - عبدالهادي جعفر</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
+  <meta name="description" content="مكتبة AlpineJs باللغة العربية">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-69VKLVPFPH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-69VKLVPFPH');
+  </script>
   <style>
     @import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");
     @import url("https://cdn.jsdelivr.net/gh/rastikerdar/samim-font@v4.0.5/dist/font-face.css");
@@ -21,9 +29,11 @@
       box-sizing: border-box;
       /* font-size: 16px; */
     }
+
     html {
       direction: rtl;
     }
+
     body:not(.ready) {
       overflow: hidden;
     }
@@ -381,6 +391,8 @@
       max-width: 80%;
       padding: 30px 15px 40px;
       position: relative;
+      border-bottom: 1px solid #EEE;
+      margin-bottom: 40px;
     }
 
     .markdown-section>* {
@@ -780,6 +792,7 @@
       font-weight: 600;
       text-decoration: unset;
     }
+
     .markdown-section a:hover {
       text-decoration: underline;
     }
@@ -1030,12 +1043,12 @@
   <nav>
     <a href="#/">الرئيسة</a>
     <a href="http://blog.abdelhadi.org/">مدونتي</a>
-    <a href="http://blog.abdelhadi.org/alpinejs">حول المكتبة</a>
+    <!-- <a href="http://blog.abdelhadi.org/alpinejs">حول المكتبة</a> -->
   </nav>
   <script>
     window.$docsify = {
       name: 'توثيق AlpineJs بالعربية',
-      repo: 'https://github.com/alpinejs/alpine',
+      repo: 'https://github.com/alpinejs/alpine/blob/master/README.ar.md',
       loadNavbar: true,
       disqus: 'twthyq-alpinejs-bl-rby',
       ga: 'UA-XXXXX-Y'
@@ -1045,4 +1058,5 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
 </body>
+
 </html>

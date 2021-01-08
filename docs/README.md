@@ -1,22 +1,22 @@
-# توثيق Alpine.js بالعربية
+# Alpine.js
 
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/alpinejs)
 ![npm version](https://img.shields.io/npm/v/alpinejs)
 [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true)](https://alpinejs.codewithhugo.com/chat/)
 
-توفر لك Alpine.js بنية تفاعلية وتصريحية (تعريفية) طبيعية مثل أُطر العمل الشهيرة كـ Vue و React بكُلفة وجهد أقل بكثير.
+توفر لك Alpine.js بنية تفاعلية (تصريحية) مثل أُطر العمل الشهيرة كـ Vue و React بكُلفة وجهد أقل بكثير.
 
 يمكنك الإحتفاظ بـ DOM والاستمرار في استخدامه، وإضافة الدّوال والوظائف له عند الحاجة.
 
 يشبه إلى حد ما [Tailwind](https://tailwindcss.com/) ولكن في الجافاسكربت.
 
-> ملاحظة: نشير إلى أن بُنية Alpine.js شبية جداً إلى [Vue](https://vuejs.org/) (أو [Angular](https://angularjs.org/)). أنا ممتن لهذه الأُطر لما قدموه في تطوير الويب.
+> ملاحظة: نشير إلى أن بُنية Alpine.js شبية جداً إلى [Vue](https://vuejs.org/) (أو [Angular](https://angularjs.org/)). أنا ممتن لهذه الأُطر بما قدموه في تطوير الويب.
 
 ## التوثيق بلغات أخرى
 
 | Language | Link for documentation |
 | --- | --- |
-| Arabic | [**التوثيق باللغة العربية**](./README.fr.md) |
+| Arabic | [**التوثيق باللغة العربية**](./README.ar.md) |
 | Chinese Traditional | [**繁體中文說明文件**](./README.zh-TW.md) |
 | German | [**Dokumentation in Deutsch**](./README.de.md) |
 | Indonesian | [**Dokumentasi Bahasa Indonesia**](./README.id.md) |
@@ -171,7 +171,7 @@ import 'alpinejs'
 
 تعرّف `x-data` حقل/نطاق جديد للمكوّن، يخبر Alpine بتهيئة المكوّن الجديد  بكائن البيانات المعرّف والمحدّد مسبقاً.
 
-مشابه لخاصية `data` في المكونّات بإطار Vue.
+مشابه لخاصية `data` بالمكونّات في إطار Vue.
 
 **استخراج التعابير المنطقية للمكوّن**
 
@@ -198,7 +198,7 @@ import 'alpinejs'
 </script>
 ```
 
-> لمستخدمي مجمّع الوحدات (bundler): يرجى ملاحظة أن وظائف الدوال التي يصل إليها Alpine.js في النطاق العام (window). فلاستخدام x-data يجب أن تصريحها إلى `window`. على سبيل المثال `window.dropdown = function () {}` (لأنه في Webpack ،Rollup ،Parcel وما إلى ذلك، الدّوال التي تكتبتها تكون بشكل إفتراضي ضِمن نطاق الوحدة "module" وليس في نطاق الصفحة `window`).
+> لمستخدمي مجمّع الوحدات (bundler): يرجى ملاحظة أن الدوال التي يصل إليها Alpine.js في النطاق العام (window). فلاستخدام x-data يجب أن تصرّحها إلى `window`. على سبيل المثال `window.dropdown = function () {}` (لأنه في Webpack ،Rollup ،Parcel وما إلى ذلك، الدّوال التي تكتبتها تكون بشكل إفتراضي ضِمن نطاق الوحدة "module" وليس في نطاق الصفحة `window`).
 
 
 يمكنك أيضاً دمج عدة كائنات متعددة معاً باستخدام محلّل الكائنات (object destructuring).
