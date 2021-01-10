@@ -765,7 +765,7 @@ import 'alpinejs'
 
 ---
 
-### <span dir="ltr">`$el`</span>
+### `$el`
 **المثال:**
 
 <div dir="ltr">
@@ -781,7 +781,7 @@ import 'alpinejs'
 
 <span dir="ltr">`$el`</span> خاصية سحرية للوصول إلى فرع DOM الأساسي.
 
-### <span dir="ltr">`$refs`</span>
+### `$refs`
 **المثال:**
 
 <div dir="ltr">
@@ -799,7 +799,7 @@ import 'alpinejs'
 
 ---
 
-### <span dir="ltr">`$event`</span>
+### `$event`
 **المثال:**
 
 <div dir="ltr">
@@ -820,7 +820,7 @@ import 'alpinejs'
 
 ---
 
-### <span dir="ltr">`$dispatch`</span>
+### `$dispatch`
 **المثال:**
 
 <div dir="ltr">
@@ -912,7 +912,7 @@ import 'alpinejs'
 
 ---
 
-### <span dir="ltr">`$nextTick`</span>
+### `$nextTick`
 **المثال:**
 
 <div dir="ltr">
@@ -936,7 +936,7 @@ import 'alpinejs'
 
 ---
 
-### <span dir="ltr">`$watch`</span>
+### `$watch`
 **المثال:**
 
 <div dir="ltr">
