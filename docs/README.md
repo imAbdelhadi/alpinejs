@@ -14,35 +14,35 @@
 
 > ملاحظة: نشير إلى أن بُنية Alpine.js شبية جداً إلى [Vue](https://vuejs.org/) (أو [Angular](https://angularjs.org/)). أنا ممتن لهذه الأُطر بما قدموه في تطوير الويب.
 
-
-
 ## التوثيق بلغات أخرى
 
-| Language | Link for documentation |
-| --- | --- |
-| Arabic | [**التوثيق باللغة العربية**](./README.ar.md) |
-| Chinese Traditional | [**繁體中文說明文件**](./README.zh-TW.md) |
-| German | [**Dokumentation in Deutsch**](./README.de.md) |
-| Indonesian | [**Dokumentasi Bahasa Indonesia**](./README.id.md) |
-| Japanese | [**日本語ドキュメント**](./README.ja.md) |
-| Portuguese | [**Documentação em Português**](./README.pt.md) |
-| Russian | [**Документация на русском**](./README.ru.md) |
-| Spanish | [**Documentación en Español**](./README.es.md) |
-| Turkish | [**Türkçe Dokümantasyon**](./README.tr.md) |
-| Français | [**Documentation en Français**](./README.fr.md) |
+| Language            | Link for documentation                             |
+| ------------------- | -------------------------------------------------- |
+| Arabic              | [**التوثيق باللغة العربية**](./README.ar.md)       |
+| Chinese Traditional | [**繁體中文說明文件**](./README.zh-TW.md)          |
+| German              | [**Dokumentation in Deutsch**](./README.de.md)     |
+| Indonesian          | [**Dokumentasi Bahasa Indonesia**](./README.id.md) |
+| Japanese            | [**日本語ドキュメント**](./README.ja.md)           |
+| Portuguese          | [**Documentação em Português**](./README.pt.md)    |
+| Russian             | [**Документация на русском**](./README.ru.md)      |
+| Spanish             | [**Documentación en Español**](./README.es.md)     |
+| Turkish             | [**Türkçe Dokümantasyon**](./README.tr.md)         |
+| Français            | [**Documentation en Français**](./README.fr.md)    |
 
 ## التركيب
 
-**باستعمال CDN:** أضف السطر البرمجي التالي في نهاية `<head>`. 
+**باستعمال CDN:** أضف السطر البرمجي التالي في نهاية `<head>`.
 
 <div dir="ltr">
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+<script
+  src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+  defer
+></script>
 ```
 
 </div>
-
 
 سيقوم Alpine.js بتهيئة نفسه، سهلة أليس كذلك!
 
@@ -51,11 +51,13 @@
 <div dir="ltr">
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+<script
+  src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
+  defer
+></script>
 ```
 
 </div>
-
 
 **باستعمال NPM:** قم بتنصيب الحزمة من NPM.
 
@@ -67,30 +69,35 @@ npm i alpinejs
 
 </div>
 
-
 قم باستدعائها وتضمينها في مشروعك.
 
 <div dir="ltr">
 
 ```js
-import 'alpinejs'
+import "alpinejs";
 ```
 
 </div>
-
 
 **لدعم نسخة المتصفّح IE11** يرجى استعمال السُطور البرمجية التالية بدلاً عن السابق.
 
 <div dir="ltr">
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+></script>
+<script
+  nomodule
+  src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js"
+  defer
+></script>
 ```
 
 </div>
 
-لو تُلاحظ في السطور أعلاه كتبنا [module/nomodule pattern](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) ، تسمح هذه الأنماط للمتصفحات الحديثة تحميل مجموعة الوحدات بشكل تلقائي، بينما ستقوم IE11 والمتصفحات القديمة الأخرى تحميل وحدات IE11 تلقائياً. 
+لو تُلاحظ في السطور أعلاه كتبنا [module/nomodule pattern](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) ، تسمح هذه الأنماط للمتصفحات الحديثة تحميل مجموعة الوحدات بشكل تلقائي، بينما ستقوم IE11 والمتصفحات القديمة الأخرى تحميل وحدات IE11 تلقائياً.
 
 ## طريقة الاستخدام
 
@@ -100,95 +107,90 @@ import 'alpinejs'
 
 ```html
 <div x-data="{ open: false }">
-    <button @click="open = true">فتح القائمة</button>
+  <button @click="open = true">فتح القائمة</button>
 
-    <ul
-        x-show="open"
-        @click.away="open = false"
-    >
-        محتوى القائمة
-    </ul>
+  <ul x-show="open" @click.away="open = false">
+    محتوى القائمة
+  </ul>
 </div>
 ```
 
 </div>
 
-
-*علامات التبويب (Tabs)*
+_علامات التبويب (Tabs)_
 
 <div dir="ltr">
 
 ```html
 <div x-data="{ tab: 'foo' }">
-    <button :class="{ 'active': tab === 'foo' }" @click="tab = 'foo'">Foo</button>
-    <button :class="{ 'active': tab === 'bar' }" @click="tab = 'bar'">Bar</button>
+  <button :class="{ 'active': tab === 'foo' }" @click="tab = 'foo'">Foo</button>
+  <button :class="{ 'active': tab === 'bar' }" @click="tab = 'bar'">Bar</button>
 
-    <div x-show="tab === 'foo'">النافذة Foo</div>
-    <div x-show="tab === 'bar'">النافذة Bar</div>
+  <div x-show="tab === 'foo'">النافذة Foo</div>
+  <div x-show="tab === 'bar'">النافذة Bar</div>
 </div>
 ```
 
 </div>
 
+يمكنك أيضاً استخدامه في أماكن أخرى:
 
-يمكنك أيضاً استخدامه في أماكن أخرى: 
-
-*التحضير المُسبق (Pre-fetching) لمُحتوى HTML.*
+_التحضير المُسبق (Pre-fetching) لمُحتوى HTML._
 
 <div dir="ltr">
 
 ```html
 <div x-data="{ open: false }">
-    <button
-        @mouseenter.once="
+  <button
+    @mouseenter.once="
             fetch('/dropdown-partial.html')
                 .then(response => response.text())
                 .then(html => { $refs.dropdown.innerHTML = html })
         "
-        @click="open = true"
-    >إظهار القائمة</button>
+    @click="open = true"
+  >
+    إظهار القائمة
+  </button>
 
-    <div x-ref="dropdown" x-show="open" @click.away="open = false">
-        جارٍ التحميل ...
-    </div>
+  <div x-ref="dropdown" x-show="open" @click.away="open = false">
+    جارٍ التحميل ...
+  </div>
 </div>
 ```
 
 </div>
 
-
 ## الشرح
 
 هناك إجمالي 14 موجّهاً مُتاحا:
 
-| الموجّه | الوصف |
-| --: | --: |
-| [`x-data`](#x-data) | إعلان أو تعريف حقل (Scope) جديد للمكوّن. |
-| [`x-init`](#x-init) | ينفّذ تعليمات برمجية عند تشغيل إحدى المكوّنات. |
-| [`x-show`](#x-show) | إظهار أو إزالة العناصر بناء على التعبيرات المنطقية <span dir="ltr">`display: none;`</span> صحيحة أو خاطئة. |
-| [`x-bind`](#x-bind) | يضبط قيمة السّمة (attribute) على حسب نتائج تعليمات الجافاسكربت. |
-| [`x-on`](#x-on) | يربط المُنصِت للأحداث (event listener) بالعنصر، يتم تنفيذ تعليمات الجافاسكربت عند التفاعل معه. |
-| [`x-model`](#x-model) | يضيف اتصال للبيانات ثنائي الإتجاه "two-way data binding" حيث أن القيم الذي يُدخلها المستخدم تتم مزامنتها مع قيمة بيانات العنصر للمكوّن. |
-| [`x-text`](#x-text) | يعمل بشكل مشابه لـ `x-bind`، ولكنه يقوم بتحديث النص المضمن `innerText` داخل العنصر. |
-| [`x-html`](#x-html) | يعمل بشكل مشابه لـ `x-bind`، ولكنه يقوم بتحديث النص المضمن `innerText` داخل العنصر. |
-| [`x-ref`](#x-ref) | طريقة بسيطة لإسترجاع عنصر داخل DOM موجود خارج المكوّن الخاص بك. |
-| [`x-if`](#x-if) | إزالة عنصر تماماً من DOM. يجب استخدامه داخل وَسم `<template>` |
-| [`x-for`](#x-for) | ينشئ فروع DOM جديدة لكل عنصر من عناصر المصفوفة. يجب استخدامه داخل وَسم `<template>` |
-| [`x-transition`](#x-transition) | توجيه لعمل تأثيرات إنتقالية في مراحل مختلفة على الأصناف (Classes) |
-| [`x-spread`](#x-spread) | يسمح لك بربط الكائنات التي تحتوي على توجيهات Alpine بالعناصر، لتحسين إمكانية إعادة استخدامه بشكل أفضل. |
-| [`x-cloak`](#x-cloak) | تتم إزالة هذه السمة عند تهيئة Alpine. مفيد لإخفاء DOM المُهيأ مسبقًا. |
+|                         الموجّه |                                                                                                                                   الوصف |
+| ------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------: |
+|             [`x-data`](#x-data) |                                                                                                إعلان أو تعريف حقل (Scope) جديد للمكوّن. |
+|             [`x-init`](#x-init) |                                                                                          ينفّذ تعليمات برمجية عند تشغيل إحدى المكوّنات. |
+|             [`x-show`](#x-show) |                              إظهار أو إزالة العناصر بناء على التعبيرات المنطقية <span dir="ltr">`display: none;`</span> صحيحة أو خاطئة. |
+|             [`x-bind`](#x-bind) |                                                                         يضبط قيمة السّمة (attribute) على حسب نتائج تعليمات الجافاسكربت. |
+|                 [`x-on`](#x-on) |                                          يربط المُنصِت للأحداث (event listener) بالعنصر، يتم تنفيذ تعليمات الجافاسكربت عند التفاعل معه. |
+|           [`x-model`](#x-model) | يضيف اتصال للبيانات ثنائي الإتجاه "two-way data binding" حيث أن القيم الذي يُدخلها المستخدم تتم مزامنتها مع قيمة بيانات العنصر للمكوّن. |
+|             [`x-text`](#x-text) |                                                     يعمل بشكل مشابه لـ `x-bind`، ولكنه يقوم بتحديث النص المضمن `innerText` داخل العنصر. |
+|             [`x-html`](#x-html) |                                                     يعمل بشكل مشابه لـ `x-bind`، ولكنه يقوم بتحديث النص المضمن `innerText` داخل العنصر. |
+|               [`x-ref`](#x-ref) |                                                                         طريقة بسيطة لإسترجاع عنصر داخل DOM موجود خارج المكوّن الخاص بك. |
+|                 [`x-if`](#x-if) |                                                                           إزالة عنصر تماماً من DOM. يجب استخدامه داخل وَسم `<template>` |
+|               [`x-for`](#x-for) |                                                     ينشئ فروع DOM جديدة لكل عنصر من عناصر المصفوفة. يجب استخدامه داخل وَسم `<template>` |
+| [`x-transition`](#x-transition) |                                                                       توجيه لعمل تأثيرات إنتقالية في مراحل مختلفة على الأصناف (Classes) |
+|         [`x-spread`](#x-spread) |                                  يسمح لك بربط الكائنات التي تحتوي على توجيهات Alpine بالعناصر، لتحسين إمكانية إعادة استخدامه بشكل أفضل. |
+|           [`x-cloak`](#x-cloak) |                                                                   تتم إزالة هذه السمة عند تهيئة Alpine. مفيد لإخفاء DOM المُهيأ مسبقًا. |
 
 و 6 خصائص سحرية:
 
-| الخصائص السحرية | الوصف |
-| --: | --: |
-| <span dir="ltr">[`$el`](#el)</span> | ترجع فرع DOM الخاص بالمكوّن الأساسي (root component). |
-| <span dir="ltr">[`$refs`](#refs)</span> | يسترجع عناصر DOM المميّزة بـ `x-ref` داخل المكوّن. |
-| <span dir="ltr">[`$event`](#event)</span> | يرجع كائن الحدث "Event"  الأصلي داخل المُتنصت لأحداث المستخدم. |
+|                                 الخصائص السحرية |                                                                                             الوصف |
+| ----------------------------------------------: | ------------------------------------------------------------------------------------------------: |
+|             <span dir="ltr">[`$el`](#el)</span> |                                             ترجع فرع DOM الخاص بالمكوّن الأساسي (root component). |
+|         <span dir="ltr">[`$refs`](#refs)</span> |                                                يسترجع عناصر DOM المميّزة بـ `x-ref` داخل المكوّن. |
+|       <span dir="ltr">[`$event`](#event)</span> |                                     يرجع كائن الحدث "Event" الأصلي داخل المُتنصت لأحداث المستخدم. |
 | <span dir="ltr">[`$dispatch`](#dispatch)</span> | ينشئ حدثاً مخصصا `CustomEvent` ويرسله داخلياً باستخدام <span dir="ltr">`.dispatchEvent()`</span>. |
-| <span dir="ltr">[`$nextTick`](#nexttick)</span> | بعد معالجة Alpine لتحديث DOM يتم تنفيذ تعليمات برمجية. |
-| <span dir="ltr">[`$watch`](#watch)</span> | يقوم باستدعاء callback تم تحديده مسبقاً عندما يتم تعديل خاصية المُراقب "watched" |
-
+| <span dir="ltr">[`$nextTick`](#nexttick)</span> |                                            بعد معالجة Alpine لتحديث DOM يتم تنفيذ تعليمات برمجية. |
+|       <span dir="ltr">[`$watch`](#watch)</span> |                  يقوم باستدعاء callback تم تحديده مسبقاً عندما يتم تعديل خاصية المُراقب "watched" |
 
 ## الرعاة
 
@@ -198,11 +200,11 @@ import 'alpinejs'
 
 ## مشاريع المجتمع
 
-* [AlpineJS Weekly Newsletter](https://alpinejs.codewithhugo.com/newsletter/)
-* [Spruce (State Management)](https://github.com/ryangjchandler/spruce)
-* [Turbolinks Adapter](https://github.com/SimoTod/alpine-turbolinks-adapter)
-* [Alpine Magic Helpers](https://github.com/KevinBatdorf/alpine-magic-helpers)
-* [Awesome Alpine](https://github.com/ryangjchandler/awesome-alpine)
+- [AlpineJS Weekly Newsletter](https://alpinejs.codewithhugo.com/newsletter/)
+- [Spruce (State Management)](https://github.com/ryangjchandler/spruce)
+- [Turbolinks Adapter](https://github.com/SimoTod/alpine-turbolinks-adapter)
+- [Alpine Magic Helpers](https://github.com/KevinBatdorf/alpine-magic-helpers)
+- [Awesome Alpine](https://github.com/ryangjchandler/awesome-alpine)
 
 ### الموجّهات
 
@@ -214,49 +216,51 @@ import 'alpinejs'
 
 **البُنية:** <span dir="ltr">`<div x-data="[object literal]">...</div>`</span>
 
-تعرّف `x-data` حقل/نطاق جديد للمكوّن، يخبر Alpine بتهيئة المكوّن الجديد  بكائن البيانات المعرّف والمحدّد مسبقاً.
+تعرّف `x-data` حقل/نطاق جديد للمكوّن، يخبر Alpine بتهيئة المكوّن الجديد بكائن البيانات المعرّف والمحدّد مسبقاً.
 
 مشابه لخاصية `data` بالمكونّات في إطار Vue.
 
 **استخراج التعابير المنطقية للمكوّن**
 
-يمكنك من استخراج مصدر البيانات والتعاملات ذات الصّلة إلى دوال قابلة لإعادة الاستخدام. 
+يمكنك من استخراج مصدر البيانات والتعاملات ذات الصّلة إلى دوال قابلة لإعادة الاستخدام.
 
 <div dir="ltr">
 
 ```html
 <div x-data="dropdown()">
-    <button x-on:click="open">فتح</button>
+  <button x-on:click="open">فتح</button>
 
-    <div x-show="isOpen()" x-on:click.away="close">
-        // القائمة المنسدلة
-    </div>
+  <div x-show="isOpen()" x-on:click.away="close">// القائمة المنسدلة</div>
 </div>
 
 <script>
-    function dropdown() {
-        return {
-            show: false,
-            open() { this.show = true },
-            close() { this.show = false },
-            isOpen() { return this.show === true },
-        }
-    }
+  function dropdown() {
+    return {
+      show: false,
+      open() {
+        this.show = true;
+      },
+      close() {
+        this.show = false;
+      },
+      isOpen() {
+        return this.show === true;
+      },
+    };
+  }
 </script>
 ```
 
 </div>
 
-
 > لمستخدمي مجمّع الوحدات (bundler): يرجى ملاحظة أن الدوال التي يصل إليها Alpine.js في النطاق العام (window). فلاستخدام x-data يجب أن تصرّحها إلى `window`. على سبيل المثال <span dir="ltr">`window.dropdown = function () {}`</span> (لأنه في Webpack ،Rollup ،Parcel وما إلى ذلك، الدّوال التي تكتبتها تكون بشكل إفتراضي ضِمن نطاق الوحدة "module" وليس في نطاق الصفحة `window`).
-
 
 يمكنك أيضاً دمج عدة كائنات متعددة معاً باستخدام محلّل الكائنات (object destructuring).
 
 <div dir="ltr">
 
 ```html
-<div x-data="{...dropdown(), ...tabs()}">
+<div x-data="{...dropdown(), ...tabs()}"></div>
 ```
 
 </div>
@@ -264,6 +268,7 @@ import 'alpinejs'
 ---
 
 ### `x-init`
+
 **المثال:** <span dir="ltr">`<div x-data="{ foo: 'bar' }" x-init="foo = 'baz'"></div>`</span>
 
 **البُنية:** <span dir="ltr">`<div x-data="..." x-init="[expression]"></div>`</span>
@@ -277,6 +282,7 @@ import 'alpinejs'
 ---
 
 ### `x-show`
+
 **المثال:** <span dir="ltr">`<div x-show="open"></div>`</span>
 
 **البُنية:** <span dir="ltr">`<div x-show="[expression]"></div>`</span>
@@ -291,25 +297,23 @@ import 'alpinejs'
 
 ```html
 <div x-show.transition="open">
-    يتم عمل تأثير بصري بالظهور "in" و الإختفاء "out"
+  يتم عمل تأثير بصري بالظهور "in" و الإختفاء "out"
 </div>
 ```
 
 </div>
 
-
-| التوجيهات | الوصف |
-| ---: | ---: |
-| `x-show.transition` | يتلاشى ويتقلص بمرور الوقت (opacity, scale: 0.95, timing-function: cubic-bezier(0.4, 0.0, 0.2, 1), duration-in: 150ms, duration-out: 75ms). |
-| `x-show.transition.in` | تأثير انتقالي "in" فقط. |
-| `x-show.transition.out` | تأثير خارجي "out" فقط. |
-| `x-show.transition.opacity` | تأثير التلاشي فقط. |
-| `x-show.transition.scale` | تأثير على الحجم فقط. |
-| `x-show.transition.scale.75` | ضبط قيمة الحجم `transform: scale(.75)`. |
-| `x-show.transition.duration.200ms` | يضبط قيمة الانتقال الأولي "in" إلى 200 مللي ثانية. تأخذ قيمة الانتقال النهائي "out" نصف القيمة المحددة (في هذه الحالة 100 مللي ثانية). |
-| `x-show.transition.origin.top.right` | تنسيق التحولات CSS transform الأصلية `transform-origin: top right` |
-| `x-show.transition.in.duration.200ms.out.duration.50ms` | تأثيرات على فترات مختلفة "in" و "out". |
-
+|                                               التوجيهات |                                                                                                                                      الوصف |
+| ------------------------------------------------------: | -----------------------------------------------------------------------------------------------------------------------------------------: |
+|                                     `x-show.transition` | يتلاشى ويتقلص بمرور الوقت (opacity, scale: 0.95, timing-function: cubic-bezier(0.4, 0.0, 0.2, 1), duration-in: 150ms, duration-out: 75ms). |
+|                                  `x-show.transition.in` |                                                                                                                    تأثير انتقالي "in" فقط. |
+|                                 `x-show.transition.out` |                                                                                                                     تأثير خارجي "out" فقط. |
+|                             `x-show.transition.opacity` |                                                                                                                         تأثير التلاشي فقط. |
+|                               `x-show.transition.scale` |                                                                                                                       تأثير على الحجم فقط. |
+|                            `x-show.transition.scale.75` |                                                                                                    ضبط قيمة الحجم `transform: scale(.75)`. |
+|                      `x-show.transition.duration.200ms` |     يضبط قيمة الانتقال الأولي "in" إلى 200 مللي ثانية. تأخذ قيمة الانتقال النهائي "out" نصف القيمة المحددة (في هذه الحالة 100 مللي ثانية). |
+|                    `x-show.transition.origin.top.right` |                                                                         تنسيق التحولات CSS transform الأصلية `transform-origin: top right` |
+| `x-show.transition.in.duration.200ms.out.duration.50ms` |                                                                                                     تأثيرات على فترات مختلفة "in" و "out". |
 
 > ملاحظة: يمكنك دمج جميع التاثيرات مع بعضها البعض (على الرغم من أنها غريبة ربما): `x-show.transition.in.duration.100ms.origin.top.right.opacity.scale.85.out.duration.200ms.origin.bottom.left.opacity.scale.95`
 
@@ -319,7 +323,7 @@ import 'alpinejs'
 
 ```html
 <div x-show.immediate="open">
-    <div x-show.transition="open">
+  <div x-show.transition="open"></div>
 </div>
 ```
 
@@ -373,7 +377,7 @@ import 'alpinejs'
 
 هنا تتم إضافة السمة `disabled` أو إزالتها بناءً على قيمة المتغيّر `myVar`.
 
-تدعم كذلك Alpine سمات منطقية مختلفة  HTML specification كـ:  `disabled`,`readonly`,`required`,`checked`,`hidden`,`selected`,`open` وغيرها.
+تدعم كذلك Alpine سمات منطقية مختلفة HTML specification كـ: `disabled`,`readonly`,`required`,`checked`,`hidden`,`selected`,`open` وغيرها.
 
 المُعدّل .camel
 مثال: <svg x-bind:view-box.camel="viewBox">
@@ -426,29 +430,29 @@ import 'alpinejs'
 **المُعدّل <span dir="ltr">`.stop`</span>**
 **المثال::** <span dir="ltr">`<div x-on:click="foo = 'bar'"><button x-on:click.stop></button></div>`</span>
 
-إضافة <span dir="ltr">`.stop`</span> إلى المتصنّت للأحداث يستدعي `stopPropagation.` في المثال أعلاه،  يعني أن الحدث "click" لن ينتقل إلى  `<div>` الخارجي. بمعنى آخر، عندما ينقر المستخدم على الزر، لا يتم تعريف `foo` على أنه `bar`.
+إضافة <span dir="ltr">`.stop`</span> إلى المتنصّت للأحداث يستدعي `stopPropagation.` في المثال أعلاه، يعني أن الحدث "click" لن ينتقل إلى `<div>` الخارجي. بمعنى آخر، عندما ينقر المستخدم على الزر، لا يتم تعريف `foo` على أنه `bar`.
 
 **المُعدّل <span dir="ltr">`.self`</span>**
 **المثال:** <span dir="ltr">`<div x-on:click.self="foo = 'bar'"><button></button></div>`</span>
 
-إضافة .self إلى المتصنّت للأحداث إلى تشغيل الحدث فقط إذا كان <span dir="ltr">`$event.target`</span> و نفسه العنصر. في المثال أعلاه، يعني أنه عند النقر على الزر "button" لن يتم تشغيل الحدث
+إضافة .self إلى المتنصّت للأحداث إلى تشغيل الحدث فقط إذا كان <span dir="ltr">`$event.target`</span> و نفسه العنصر. في المثال أعلاه، يعني أنه عند النقر على الزر "button" لن يتم تشغيل الحدث
 
 **المُعدّل <span dir="ltr">`.window`</span>**
 **المثال:** <span dir="ltr">`<div x-on:resize.window="isOpen = window.outerWidth > 768 ? false : open"></div>`</span>
 
-إضافة <span dir="ltr">`.window`</span> إلى مستمع الأحداث، سيقوم بتثبيت المتصنّت للأحداث على نافذة المتصفّح كله `window` بدلاً من DOM الذي قمت بتصريحه أو تحديده. هذا مفيد لك في حال أردت ضبط أحد المكوّنات وتغييرها على حسب حجم (أبعاد) المتصفّح. في المثال أعلاه سيتم إغلاق النافذة أو القائمة المنسدلة إذا تجاوزت أبعاد المتصفح 768 بكسل، خلاف ذلك نُبقيه على حالته.
+إضافة <span dir="ltr">`.window`</span> إلى مستمع الأحداث، سيقوم بتثبيت المتنصّت للأحداث على نافذة المتصفّح كله `window` بدلاً من DOM الذي قمت بتصريحه أو تحديده. هذا مفيد لك في حال أردت ضبط أحد المكوّنات وتغييرها على حسب حجم (أبعاد) المتصفّح. في المثال أعلاه سيتم إغلاق النافذة أو القائمة المنسدلة إذا تجاوزت أبعاد المتصفح 768 بكسل، خلاف ذلك نُبقيه على حالته.
 
->ملاحظة: يمكنك أيضًا استخدام معدّل <span dir="ltr">`.document`</span> لإرفاق المتصنّت بدلا من `window`.
+> ملاحظة: يمكنك أيضًا استخدام معدّل <span dir="ltr">`.document`</span> لإرفاق المتنصّت بدلا من `window`.
 
 **المُعدّل <span dir="ltr">`.once`</span>**
 **المثال:** <span dir="ltr">`<button x-on:mouseenter.once="fetchSomething()"></button>`</span>
 
-تعني إضافة المعدّل <span dir="ltr">`.once`</span> إلى المتصنّت للحدث أن المنصت (listener) يعمل مرة واحدة فقط. هذا مفيد للمهام التي تريد القيام بها مرة واحدة فقط، مثل الجلب الجزئي لشفرات HTML أو ما شابه.
+تعني إضافة المعدّل <span dir="ltr">`.once`</span> إلى المتنصّت للحدث أن المنصت (listener) يعمل مرة واحدة فقط. هذا مفيد للمهام التي تريد القيام بها مرة واحدة فقط، مثل الجلب الجزئي لشفرات HTML أو ما شابه.
 
 **المُعدّل <span dir="ltr">`.passive`</span>**
 **المثال:** <span dir="ltr">`<button x-on:mousedown.passive="interactive = true"></button>`</span>
 
-إذا أضفنا <span dir="ltr">`.passive`</span> إلى المتصنّت للحدث، فإن هذا الرمز المميز سيعطل وظيفة <span dir="ltr">`preventDefault()`</span> ولن تعمل على أي حدث يتم تنفيذه. يمكن أن يساعدك أحياناً في تحسين أداء التمرير (scroll) على الأجهزة التي تعمل باللمس.
+إذا أضفنا <span dir="ltr">`.passive`</span> إلى المتنصّت للحدث، فإن هذا الرمز المميز سيعطل وظيفة <span dir="ltr">`preventDefault()`</span> ولن تعمل على أي حدث يتم تنفيذه. يمكن أن يساعدك أحياناً في تحسين أداء التمرير (scroll) على الأجهزة التي تعمل باللمس.
 
 **المُعدّل <span dir="ltr">`.debounce`</span>**
 **المثال:** <span dir="ltr">`<input x-on:input.debounce="fetchSomething()">`</span>
@@ -462,28 +466,28 @@ import 'alpinejs'
 <div dir="ltr">
 
 ```html
-<input x-on:input.debounce.750="fetchSomething()">
-<input x-on:input.debounce.750ms="fetchSomething()">
+<input x-on:input.debounce.750="fetchSomething()" />
+<input x-on:input.debounce.750ms="fetchSomething()" />
 ```
 
 </div>
 
-
 **المُعدّل <span dir="ltr">`.camel`</span>**
 **المثال:** <span dir="ltr">`<input x-on:event-name.camel="doSomething()">`</span>
 
-يقوم المتصنّت للأحداث بالإنصات إلى الأحداث التي تحمل حالة أحرف بصيغة camelCase. في هذا المثال سيتم تنفيذها للعناصر التي تحمل اسم `eventName`.
+يقوم المتنصّت للأحداث بالإنصات إلى الأحداث التي تحمل حالة أحرف بصيغة camelCase. في هذا المثال سيتم تنفيذها للعناصر التي تحمل اسم `eventName`.
 
 ---
 
 ### `x-model`
+
 **المثال:** <span dir="ltr">`<input type="text" x-model="foo">`</span>
 
 **البُنية:** <span dir="ltr">`<input type="text" x-model="[data item]">`</span>
 
 يضيف `x-model` ربط بيانات ثنائي الإتجاه "two-way data binding" (أي أن ربط البيانات يكون في كلا الطرفين). بمعنى آخر، أن قيمة العنصر تتم مزامنتها مع قيمة بيانات عنصر للمكوّن.
 
-> يكتشف `x-model` تلقائياً التغييرات التي تطرأ على العناصر التالية:  text inputs ،checkboxes ،radio buttons ،textareas ،selects ،multiple selects.
+> يكتشف `x-model` تلقائياً التغييرات التي تطرأ على العناصر التالية: text inputs ،checkboxes ،radio buttons ،textareas ،selects ،multiple selects.
 > يمكنك فهم كيف يعمل ذلك في الخفاء في "سيناريوهات" إطار عمل [how Vue would](https://vuejs.org/v2/guide/forms.html).
 
 **المُعدّل <span dir="ltr">`.number`</span>**
@@ -503,8 +507,8 @@ import 'alpinejs'
 <div dir="ltr">
 
 ```html
-<input x-model.debounce.750="search">
-<input x-model.debounce.750ms="search">
+<input x-model.debounce.750="search" />
+<input x-model.debounce.750ms="search" />
 ```
 
 </div>
@@ -512,20 +516,22 @@ import 'alpinejs'
 ---
 
 ### `x-text`
+
 **المثال:** <span dir="ltr">`<span x-text="foo"></span>`</span>
 
 **البُنية:** <span dir="ltr">`<span x-text="[expression]"`</span>
 
-يعمل بشكل مشابه لـ `x-bind`، ولكنه يقوم بتحديث النص المضمن `innerText` داخل العنصر.  
+يعمل بشكل مشابه لـ `x-bind`، ولكنه يقوم بتحديث النص المضمن `innerText` داخل العنصر.
 
 ---
 
 ### `x-html`
+
 **المثال:** <span dir="ltr">`<span x-html="foo"></span>`</span>
 
 **البُنية:** <span dir="ltr">`<span x-html="[expression]"`</span>
 
-يعمل بشكل مشابه لـ `x-bind`، ولكنه يقوم بتحديث شفرة HTML المضمنة  `innerText` داخل العنصر. 
+يعمل بشكل مشابه لـ `x-bind`، ولكنه يقوم بتحديث شفرة HTML المضمنة `innerText` داخل العنصر.
 
 > :warning: **في هذه الحالة نوصي بكتابة محتوى (شفرات نظيفة) ولا تسمح بمُدخلات المُستخدم (user-provided)** :warning:
 >
@@ -534,46 +540,48 @@ import 'alpinejs'
 ---
 
 ### `x-ref`
+
 **المثال:** <span dir="ltr">`<div x-ref="foo"></div><button x-on:click="$refs.foo.innerText = 'bar'"></button>`</span>
 
 **البُنية:** <span dir="ltr">`<div x-ref="[ref name]"></div><button x-on:click="$refs.[ref name].innerText = 'bar'"></button>`</span>
 
-توفر `x-ref` طريقة مفيدة لجلب عناصر DOM خارج المكون الخاص بك، عندما تقوم بتعيين `x-ref` للعنصر، سيكون متاحاً لجميع معالجات الأحداث داخل الكائن عن طريق استدعاء `$refs`. 
+توفر `x-ref` طريقة مفيدة لجلب عناصر DOM خارج المكون الخاص بك، عندما تقوم بتعيين `x-ref` للعنصر، سيكون متاحاً لجميع معالجات الأحداث داخل الكائن عن طريق استدعاء `$refs`.
 
-بديل مفيد  في حال كان يجب استخدام الأمر `document.querySelector` في كثير من الأحيان للإشارة إلى العناصر.
+بديل مفيد في حال كان يجب استخدام الأمر `document.querySelector` في كثير من الأحيان للإشارة إلى العناصر.
 
 > يمكنك أيضا عمل ربط القيم المتغيّرة (الديناميكية) بـ <span dir="ltr">`<span :x-ref="item.id"></span>`</span>.
 
 ---
 
 ### `x-if`
+
 **المثال:** <span dir="ltr">`<template x-if="true"><div>Some Element</div></template>`</span>
 
 **البُنية:** <span dir="ltr">`<template x-if="[expression]"><div>Some Element</div></template>`</span>
 
 إذا كانت وظيفة `x-show` (كما شرحناها سابقاً) غير كافية، فيمكن استخدام `x-if` بدلاً من ذلك لإزالة عنصر بالكامل من DOM.
 
-نظرًا لأن Alpine لا يحتوي على DOM افتراضي، يجب استخدام `x-if` مع الوسم `<template></template>`. بحيث يسمح لـ Alpine  البقاء مستقرًا والوصول إلى DOM الحقيقي.
+نظرًا لأن Alpine لا يحتوي على DOM افتراضي، يجب استخدام `x-if` مع الوسم `<template></template>`. بحيث يسمح لـ Alpine البقاء مستقرًا والوصول إلى DOM الحقيقي.
 
 > ملاحظة: عند استخدام `x-if`، يجب أن يكون هناك عنصر جذر واحد (element root) على الأقل داخل `<template></template>`
 
-> ملاحظة: عند استخدام template في svg، ستحتاج إلى إضافة [polyfill](https://github.com/alpinejs/alpine/issues/637#issuecomment-654856538) الذي يجب تنفيذه قبل تهيئة Alpine.js. 
+> ملاحظة: عند استخدام template في svg، ستحتاج إلى إضافة [polyfill](https://github.com/alpinejs/alpine/issues/637#issuecomment-654856538) الذي يجب تنفيذه قبل تهيئة Alpine.js.
 
 ---
 
 ### `x-for`
+
 **المثال:**
 
 <div dir="ltr">
 
 ```html
 <template x-for="item in items" :key="item">
-    <div x-text="item"></div>
+  <div x-text="item"></div>
 </template>
 ```
 
 </div>
-
 
 > ملاحظة: هذا `:key` مفتاح اختياري ، ومع ذلك، نوصى به وبشدة.
 
@@ -583,8 +591,8 @@ import 'alpinejs'
 
 ```html
 <template x-for="(item, index) in items" :key="index">
-    <!-- يمكنك أيضًا الرجوع إلى "index" داخل التكرار إذا لزم الأمر. -->
-    <div x-text="index"></div>
+  <!-- يمكنك أيضًا الرجوع إلى "index" داخل التكرار إذا لزم الأمر. -->
+  <div x-text="index"></div>
 </template>
 ```
 
@@ -594,13 +602,13 @@ import 'alpinejs'
 
 ```html
 <template x-for="(item, index, collection) in items" :key="index">
-    <!-- يمكنك أيضًا الرجوع إلى "collection" في التكرار متى احتجت إلى ذلك. -->
-    <!-- العنصر الحالي. -->
-    <div x-text="item"></div>
-    <!--نفس العنصر المذكور أعلاه. -->
-    <div x-text="collection[index]"></div>
-    <!-- لعنصر السابق. -->
-    <div x-text="collection[index - 1]"></div>
+  <!-- يمكنك أيضًا الرجوع إلى "collection" في التكرار متى احتجت إلى ذلك. -->
+  <!-- العنصر الحالي. -->
+  <div x-text="item"></div>
+  <!--نفس العنصر المذكور أعلاه. -->
+  <div x-text="collection[index]"></div>
+  <!-- لعنصر السابق. -->
+  <div x-text="collection[index - 1]"></div>
 </template>
 ```
 
@@ -608,25 +616,25 @@ import 'alpinejs'
 
 > ملاحظة: عند استخدام `x-for`، يجب أن يكون هناك عنصر جذر واحد (element root) على الأقل داخل `template`.
 
-> ملاحظة: عند استخدام template في svg، ستحتاج إلى إضافة [polyfill](https://github.com/alpinejs/alpine/issues/637#issuecomment-654856538) الذي يجب تنفيذه قبل تهيئة Alpine.js. 
+> ملاحظة: عند استخدام template في svg، ستحتاج إلى إضافة [polyfill](https://github.com/alpinejs/alpine/issues/637#issuecomment-654856538) الذي يجب تنفيذه قبل تهيئة Alpine.js.
 
 #### تداخل `x-for`
+
 يمكنك عمل حلقات تكرار داخل حلقات x-for ولكن يجب أن نلّف (wrap) كل دورة في عنصر. مثلا:
 
 <div dir="ltr">
 
 ```html
 <template x-for="item in items">
-    <div>
-        <template x-for="subItem in item.subItems">
-            <div x-text="subItem"></div>
-        </template>
-    </div>
+  <div>
+    <template x-for="subItem in item.subItems">
+      <div x-text="subItem"></div>
+    </template>
+  </div>
 </template>
 ```
 
 </div>
-
 
 #### التكرار داخل مجال:
 
@@ -636,7 +644,7 @@ import 'alpinejs'
 
 ```html
 <template x-for="i in 10">
-    <span x-text="i"></span>
+  <span x-text="i"></span>
 </template>
 ```
 
@@ -645,20 +653,23 @@ import 'alpinejs'
 ---
 
 ### `x-transition`
+
 **المثال:**
 
 <div dir="ltr">
 
 ```html
 <div
-    x-show="open"
-    x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0 transform scale-90"
-    x-transition:enter-end="opacity-100 transform scale-100"
-    x-transition:leave="transition ease-in duration-300"
-    x-transition:leave-start="opacity-100 transform scale-100"
-    x-transition:leave-end="opacity-0 transform scale-90"
->...</div>
+  x-show="open"
+  x-transition:enter="transition ease-out duration-300"
+  x-transition:enter-start="opacity-0 transform scale-90"
+  x-transition:enter-end="opacity-100 transform scale-100"
+  x-transition:leave="transition ease-in duration-300"
+  x-transition:leave-start="opacity-100 transform scale-100"
+  x-transition:leave-end="opacity-0 transform scale-90"
+>
+  ...
+</div>
 ```
 
 </div>
@@ -666,14 +677,16 @@ import 'alpinejs'
 
 ```html
 <template x-if="open">
-    <div
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0 transform scale-90"
-        x-transition:enter-end="opacity-100 transform scale-100"
-        x-transition:leave="transition ease-in duration-300"
-        x-transition:leave-start="opacity-100 transform scale-100"
-        x-transition:leave-end="opacity-0 transform scale-90"
-    >...</div>
+  <div
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 transform scale-90"
+    x-transition:enter-end="opacity-100 transform scale-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100 transform scale-100"
+    x-transition:leave-end="opacity-0 transform scale-90"
+  >
+    ...
+  </div>
 </template>
 ```
 
@@ -685,65 +698,67 @@ import 'alpinejs'
 
 تعمل هذه تمامًا مثل توجيهات التأثير بـ VueJS، باستثناء أن لها أسماء مختلفة وأكثر منطقية:
 
-| التوجيه | الوصف |
-| ---: | ---: |
-| <span dir="ltr">`:enter`</span> | يتم تطبيقه طوال مرحلة الدخول. |
-| <span dir="ltr">`:enter-start`</span> | تتم إضافته قبل إدراج العنصر وإزالة الإطار (frame) بعد إدراج العنصر. |
-| <span dir="ltr">`:enter-end`</span> | تمت إضافة إطار (frame) واحد بعد إدراج العنصر (في نفس الوقت تتم إزالة `enter-start`) ، تتم إزالته عند انتهاء التأثير/التحريك. |
-| <span dir="ltr">`:leave`</span> | تُطبق طوال مرحلة الخروج. |
-| <span dir="ltr">`:leave-start`</span> | يُضاف مباشرة عند بدء انتهاء التأثير، وإزالته بعد إطار واحد. |
-| <span dir="ltr">`:leave-end`</span> | تمت إضافة إطار بعد تشغيل "انتهاء التأثير" (في نفس الوقت الذي تتم فيه إزالة `leave-start`) ، وتتم إزالته عند انتهاء التأثير/التحريك. |
+|                               التوجيه |                                                                                                                               الوصف |
+| ------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------: |
+|       <span dir="ltr">`:enter`</span> |                                                                                                       يتم تطبيقه طوال مرحلة الدخول. |
+| <span dir="ltr">`:enter-start`</span> |                                                                 تتم إضافته قبل إدراج العنصر وإزالة الإطار (frame) بعد إدراج العنصر. |
+|   <span dir="ltr">`:enter-end`</span> |        تمت إضافة إطار (frame) واحد بعد إدراج العنصر (في نفس الوقت تتم إزالة `enter-start`) ، تتم إزالته عند انتهاء التأثير/التحريك. |
+|       <span dir="ltr">`:leave`</span> |                                                                                                            تُطبق طوال مرحلة الخروج. |
+| <span dir="ltr">`:leave-start`</span> |                                                                         يُضاف مباشرة عند بدء انتهاء التأثير، وإزالته بعد إطار واحد. |
+|   <span dir="ltr">`:leave-end`</span> | تمت إضافة إطار بعد تشغيل "انتهاء التأثير" (في نفس الوقت الذي تتم فيه إزالة `leave-start`) ، وتتم إزالته عند انتهاء التأثير/التحريك. |
 
 ---
 
 ### `x-spread`
+
 **المثال:**
 
 <div dir="ltr">
 
 ```html
 <div x-data="dropdown()">
-    <button x-spread="trigger">فتح القائمة المنسدلة</button>
+  <button x-spread="trigger">فتح القائمة المنسدلة</button>
 
-    <span x-spread="dialogue">محتوى القائمة</span>
+  <span x-spread="dialogue">محتوى القائمة</span>
 </div>
 
 <script>
-    function dropdown() {
-        return {
-            open: false,
-            trigger: {
-                ['@click']() {
-                    this.open = true
-                },
-            },
-            dialogue: {
-                ['x-show']() {
-                    return this.open
-                },
-                ['@click.away']() {
-                    this.open = false
-                },
-            }
-        }
-    }
+  function dropdown() {
+    return {
+      open: false,
+      trigger: {
+        ["@click"]() {
+          this.open = true;
+        },
+      },
+      dialogue: {
+        ["x-show"]() {
+          return this.open;
+        },
+        ["@click.away"]() {
+          this.open = false;
+        },
+      },
+    };
+  }
 </script>
 ```
 
 </div>
-
 
 يتيح `x-spread` نقل ربط الكائنات التي تحتوي على توجيهات Alpine لعنصر ما، إلى كائن يمكن إعادة استخدامه.
 
 مفاتيح الكائن (object keys) عبارة عن توجيهات (يمكن أن يكون أي توجيهات بما في ذلك المُعدّلات) والقيم عبارة عن عمليات callback يتم تنفيذ قيمها بواسطة Alpine.
 
 > ملاحظة: هناك بعض الأشياء التي يجب مراعاتها في `x-spread`:
-> - الحالة الخاصة الوحيدة لـ spread هي استخدامه مع `x-for`. عند تطبيقه على التوجيه `x-for`، يجب إرجاع تعليمات نصيّة (string) عادية بواسطة callback.  كمثال <span dir="ltr">`['x-for']() { return 'item in items' }`</span>
-> - `x-data` و  `x-init` لا يمكن إستخدامهما داخل كائن "spread".
+>
+> - الحالة الخاصة الوحيدة لـ spread هي استخدامه مع `x-for`. عند تطبيقه على التوجيه `x-for`، يجب إرجاع تعليمات نصيّة (string) عادية بواسطة callback. كمثال <span dir="ltr">`['x-for']() { return 'item in items' }`</span>
+> - `x-data` و `x-init` لا يمكن إستخدامهما داخل كائن "spread".
 
 ---
 
 ### `x-cloak`
+
 **المثال:** <span dir="ltr">`<div x-data="{}" x-cloak></div>`</span>
 
 تتم إزالة سمة `x-cloak` من العنصر أثناء تهيئة Alpine. يساعد هذا في إخفاء DOM المهيأ مسبقاً. لكي يعمل هذا عليك بإضافة التعليمات التالية:
@@ -752,12 +767,13 @@ import 'alpinejs'
 
 ```html
 <style>
-    [x-cloak] { display: none; }
+  [x-cloak] {
+    display: none;
+  }
 </style>
 ```
 
 </div>
-
 
 ### الخصائص السحرية
 
@@ -766,22 +782,23 @@ import 'alpinejs'
 ---
 
 ### `$el`
+
 **المثال:**
 
 <div dir="ltr">
 
 ```html
 <div x-data>
-    <button @click="$el.innerHTML = 'foo'">استبدلني بـ "foo"</button>
+  <button @click="$el.innerHTML = 'foo'">استبدلني بـ "foo"</button>
 </div>
 ```
 
 </div>
 
-
 <span dir="ltr">`$el`</span> خاصية سحرية للوصول إلى فرع DOM الأساسي.
 
 ### `$refs`
+
 **المثال:**
 
 <div dir="ltr">
@@ -794,23 +811,23 @@ import 'alpinejs'
 
 </div>
 
-
 يسترجع عناصر DOM المميّزة بـ `x-ref` داخل المكوّن، مفيدًا عندما تحتاج عناصر DOM إلى التعديل يدويًا.
 
 ---
 
 ### `$event`
+
 **المثال:**
 
 <div dir="ltr">
 
 ```html
-<input x-on:input="alert($event.target.value)">
+<input x-on:input="alert($event.target.value)" />
 ```
 
 </div>
 
-يرجع كائن الحدث "Event"  الأصلي داخل المُتنصت لأحداث المستخدم.
+يرجع كائن الحدث "Event" الأصلي داخل المُتنصت لأحداث المستخدم.
 
 > ملاحظة: خاصية $event متاحة فقط في تعليمات DOM.
 
@@ -821,6 +838,7 @@ import 'alpinejs'
 ---
 
 ### `$dispatch`
+
 **المثال:**
 
 <div dir="ltr">
@@ -833,7 +851,6 @@ import 'alpinejs'
 ```
 
 </div>
-
 
 <span dir="ltr">`$dispatch`</span> هي طريقة مختصرة لإنشاء أحداث مخصصة `CustomEvent` وإرسالها داخلياً باستخدام <span dir="ltr">`.dispatchEvent()`</span> هناك العديد من حالات الاستخدام التي يكون فيها إرسال البيانات بين المكونات من خلال أحداث يحددها المستخدم خيارًا جيداً. هنا يمكنك العثور على [مزيد من المعلومات](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events) حول نظام CustomEvent الأساسي في المتصفحات.
 
@@ -850,7 +867,6 @@ import 'alpinejs'
 
 </div>
 
-
 **ملاحظة حول انتشار الحدث** (**Event Propagation**)
 
 إذا كنت ترغب في توقيف الأحداث التي يتم تشغيلها بواسطة عقد HTML داخل نفس التسلسل الهرمي المتداخل (يعني `div` داخل `div` وهكذا)، فيجب عليك استخدام المُعدِّل <span dir="ltr">`.window`</span>.
@@ -861,13 +877,14 @@ import 'alpinejs'
 
 ```html
 <div x-data>
-    <span @custom-event="console.log($event.detail.foo)"></span>
-    <button @click="$dispatch('custom-event', { foo: 'bar' })">
-<div>
+  <span @custom-event="console.log($event.detail.foo)"></span>
+  <button @click="$dispatch('custom-event', { foo: 'bar' })">
+    <div></div>
+  </button>
+</div>
 ```
 
 </div>
-
 
 > ملاحظة: المثال أعلاه لن يعمل بشكل جيّد. لأنه إذا تم تشغيل الحدث المخصص، فسيتم انتشاره "تشغيله" في العناصر الرئيسية المشتركة بـ div.
 
@@ -883,11 +900,11 @@ import 'alpinejs'
 <div x-data @custom-event.window="console.log($event.detail)"></div>
 
 <button x-data @click="$dispatch('custom-event', 'Hello World!')">
-<!--عندما تنقر سيطبع console.log "Hello World!". -->
+  <!--عندما تنقر سيطبع console.log "Hello World!". -->
+</button>
 ```
 
 </div>
-
 
 يمكنك أيضا استخدام <span dir="ltr">`$dispatch()`</span> لبدء تحديث البيانات من روابط `x-model`. على سبيل المثال:
 
@@ -913,66 +930,66 @@ import 'alpinejs'
 ---
 
 ### `$nextTick`
+
 **المثال:**
 
 <div dir="ltr">
 
 ```html
 <div x-data="{ fruit: 'apple' }">
-    <button
-        x-on:click="
+  <button
+    x-on:click="
             fruit = 'pear';
             $nextTick(() => { console.log($event.target.innerText) });
         "
-        x-text="fruit"
-    ></button>
+    x-text="fruit"
+  ></button>
 </div>
 ```
 
 </div>
-
 
 <span dir="ltr">`$nextTick`</span> هي خاصية تعني أن التعليمات لا يتم تنفيذها إلا بعد أن يقوم Alpine بتنفيذ تحديثات DOM التفاعلية. هذا مفيد إذا كنت لا تريد التفاعل مع DOM حتى يتم إجراء جميع تحديثات للبيانات.
 
 ---
 
 ### `$watch`
+
 **المثال:**
 
 <div dir="ltr">
 
 ```html
-<div x-data="{ open: false }" x-init="$watch('open', value => console.log(value))">
-    <button @click="open = ! open">Toggle Open</button>
+<div
+  x-data="{ open: false }"
+  x-init="$watch('open', value => console.log(value))"
+>
+  <button @click="open = ! open">Toggle Open</button>
 </div>
 ```
 
 </div>
 
-
 تمكّنك <span dir="ltr">`$watch`</span> في المثال أعلاه أنه عند الضغط فوق الزر "button" ويتم تفعيل `open`، يقوم callback بتنفيذ `console.log` وطباعة القيمة الجديدة.
 
 ## الحماية
+
 إذا وجدت ثغرة أمنية، يُرجى إرسال بريد إلكتروني إلى: [calebporzio@gmail.com]().
 
 يعتمد Alpine على `function` لتنفيذ خصائصه. على الرغم من كونها أنها أكثرَ أماناً من <span dir="ltr">`eval()`</span> إلا أن هذه الممارسة مازالت محظورة في بعض البيئات المقيّدة مثل Google Chrome App باستخدام سياسة أمان المحتوى المقيد ([CSP](https://csp.withgoogle.com/docs/strict-csp.html)).
 
 إذا كنت تستخدم Alpine في بيئة بها بيانات حساسة وتحتاج إلى [CSP](https://csp.withgoogle.com/docs/strict-csp.html)، فأنت بحاجة إلى تضمين التقييم غير الآمن `unsafe-eval` في سياستك. يساعد في وضع سياسات قوية على حماية المستخدمين عند استخدام المعلومات الشخصية والمالية.
 
-نظرًا لأن السياسة تنطبق على جميع البرامج النصية في صفحتك، فمن المهم أن تتم مراجعة المكتبات الخارجية الأخرى المضمنة في موقعك بعناية للتأكد من أنها جديرة لإستعمالها وآمنة ولن تقدم أي ثغرة أمنية XSS أو (Cross Site Scripting vulnerability)  عبر الموقع سواء باستخدام وظيفة <span dir="ltr">`eval()`</span> أو التلاعب بـ DOM لإدخال تعليمات برمجية ضارة في صفحتك.
+نظرًا لأن السياسة تنطبق على جميع البرامج النصية في صفحتك، فمن المهم أن تتم مراجعة المكتبات الخارجية الأخرى المضمنة في موقعك بعناية للتأكد من أنها جديرة لإستعمالها وآمنة ولن تقدم أي ثغرة أمنية XSS أو (Cross Site Scripting vulnerability) عبر الموقع سواء باستخدام وظيفة <span dir="ltr">`eval()`</span> أو التلاعب بـ DOM لإدخال تعليمات برمجية ضارة في صفحتك.
 
 ## الرخصة
 
-حقوق النشر محفوظة  © 2019-2020 لـ Caleb Porzio والمساهمين.
+حقوق النشر محفوظة © 2019-2020 لـ Caleb Porzio والمساهمين.
 
 مرخص بموجب ترخيص MIT، راجع [LICENSE.md](https://github.com/alpinejs/alpine/blob/master/LICENSE.md) للحصول على التفاصيل.
 
 </div>
 
-------------
+---
 
-- *حدّثت يوم 10 يناير 2021 - الموافق لـ 26 جمادى الأولى 1442هـ.*
-
-
-
-
+- _حدّثت يوم 10 يناير 2021 - الموافق لـ 26 جمادى الأولى 1442هـ._
